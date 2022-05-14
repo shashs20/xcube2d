@@ -6,8 +6,8 @@ int MyEngineSystem::sound(int argc, char **argv) {
 
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
-	Mix_Music* bgm = Mix_LoadMUS("applaud.mp3");
-	Mix_Chunk* Soundeffect = Mix_LoadWAV("bgm.mp3");
+	Mix_Music* bgm = Mix_LoadMUS("bgm.mp3");
+	Mix_Chunk* Soundeffect = Mix_LoadWAV("applaud.mp3");
 
 	Mix_PlayMusic(bgm, -1);
 
