@@ -1,15 +1,20 @@
-#ifndef __MY_ENGINE_H__
-#define __MY_ENGINE_H__
-
+#include "MyEngineSystem.h"
 #include <SDL_mixer.h>
+#include <SDL.h>
 
-#include "../EngineCommon.h"
+int MyEngineSystem::sound(int argc, char **argv) {
 
-class MyEngineSystem {
-	friend class XCube2Engine;
-	private:
-		int sound(int argc, char** argv);
+	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
-	public:
-};
-#endif
+	Mix_Music* bgm = Mix_LoadMUS("applaud.mp3");
+	Mix_Chunk* Soundeffect = Mix_LoadWAV("bgm.mp3");
+
+	Mix_PlayMusic(bgm, -1);
+
+	Mix_CloseAudio();
+	Mix_FreeMusic(bgm);
+	Mix_FreeChunk(Soundeffect);
+	SDL_Quit;
+
+	return 0;
+}
