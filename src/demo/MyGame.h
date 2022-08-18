@@ -8,6 +8,12 @@ struct GameKey {
 	bool isAlive;
 };
 
+struct Enemy {
+	Point2 pos;
+	bool isAlive;
+};
+	
+
 class MyGame : public AbstractGame {
 	private:
 		Rect box;
@@ -16,9 +22,12 @@ class MyGame : public AbstractGame {
 
 		std::vector<std::shared_ptr<GameKey>> gameKeys;
 
+		std::vector<std::shared_ptr<Enemy>> enemy;
+
 		/* GAMEPLAY */
-		int score, numKeys, lives;
+		int score, numKeys, enemyObjects, lives;
 		bool gameWon;
+		bool gameLose;
 
 		void handleKeyEvents();
 		void update();
