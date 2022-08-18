@@ -35,7 +35,7 @@ class MyGame : public AbstractGame {
 		void renderUI();
 	public:
         MyGame();
-		~MyGame();
+	~MyGame();
 };
 
 #endif
